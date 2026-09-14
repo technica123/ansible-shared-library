@@ -14,6 +14,17 @@ def call(Map config = [:]) {
                 }
             }
 
+            stage('User Approval') {
+                steps {
+
+                    input(
+                        message: 'Approve deployment?',
+                        ok: 'Proceed'
+                    )
+
+                }
+            }
+
         }
 
     }
