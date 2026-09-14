@@ -25,6 +25,24 @@ def call(Map config = [:]) {
                 }
             }
 
+            stage('Playbook Execution') {
+                steps {
+
+                    echo "Running Ansible Playbook"
+
+                    dir('env/prod') {
+
+                        sh '''
+                            ansible-playbook \
+                            -i inventory \
+                            playbook.yml
+                        '''
+
+                    }
+
+                }
+            }
+
         }
 
     }
