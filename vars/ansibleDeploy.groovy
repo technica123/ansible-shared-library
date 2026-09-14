@@ -43,6 +43,16 @@ def call(Map config = [:]) {
                 }
             }
 
+            stage('Notification') {
+                steps {
+
+                    echo "Sending Notification"
+
+                    echo "Deployment completed successfully"
+
+                }
+            }
+
         }
 
     }
