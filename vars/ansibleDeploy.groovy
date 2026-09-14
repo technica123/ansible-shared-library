@@ -1,3 +1,20 @@
 def call(Map config = [:]) {
-    echo "Ansible Shared Library Started"
+
+    pipeline {
+
+        agent any
+
+        stages {
+
+            stage('Clone') {
+                steps {
+                    echo "Cloning Repository"
+
+                    checkout scm
+                }
+            }
+
+        }
+
+    }
 }
